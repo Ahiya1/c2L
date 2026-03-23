@@ -1,0 +1,12 @@
+# Real contact data -- NEVER commit
+contacts/customs-broker-targets-real.csv
+contacts/*-real.csv
+
+# Node
+node_modules/
+
+# Test coverage
+coverage/
+
+# Build output
+dist/

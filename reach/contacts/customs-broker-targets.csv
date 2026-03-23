@@ -1,0 +1,11 @@
+priority,company_name,company_name_he,contact_name,role,email,phone,location,company_size,specialization,website,linkedin,status,last_contact,next_action,notes
+1,Example Customs Ltd,דוגמא עמילות מכס בע״מ,ישראל ישראלי,בעלים,example1@example.co.il,050-0000001,אשדוד,10-20,ייבוא כללי,https://example.co.il,,pending,,לשלוח מייל ראשון,נתון לדוגמא - להחליף בנתון אמיתי
+2,Test Broker Co,טסט שילוח בינלאומי,דוד דוידוב,מנהל,example2@example.co.il,050-0000002,חיפה,5-10,ייבוא מזון,https://example2.co.il,,pending,,לשלוח מייל ראשון,נתון לדוגמא - להחליף בנתון אמיתי
+3,Sample Logistics,סמפל לוגיסטיקה בע״מ,שרה כהן,סמנכ״לית,example3@example.co.il,050-0000003,אשדוד,20-50,ייבוא אלקטרוניקה,https://example3.co.il,,pending,,לשלוח מייל ראשון,נתון לדוגמא - להחליף בנתון אמיתי
+4,Placeholder Shipping,פלייסהולדר שיפינג,יעקב לוי,בעלים,example4@example.co.il,050-0000004,נמל התעופה בן גוריון,3-5,ייבוא טקסטיל,https://example4.co.il,,pending,,לשלוח מייל ראשון,נתון לדוגמא - להחליף בנתון אמיתי
+5,Demo Customs Agency,דמו סוכנות מכס,רחל אברהמי,מנהלת תפעול,example5@example.co.il,050-0000005,חיפה,10-15,ייבוא חומרי גלם,https://example5.co.il,,pending,,לשלוח מייל ראשון,נתון לדוגמא - להחליף בנתון אמיתי
+6,Fake Freight Ltd,פייק משלוחים בע״מ,משה מזרחי,בעלים,example6@example.co.il,050-0000006,אשדוד,15-25,ייבוא רכב,https://example6.co.il,,pending,,לשלוח מייל ראשון,נתון לדוגמא - להחליף בנתון אמיתי
+7,Test Import Co,טסט ייבוא בע״מ,נועה גולדברג,מנהלת,example7@example.co.il,050-0000007,נמל התעופה בן גוריון,5-10,ייבוא תרופות,https://example7.co.il,,pending,,לשלוח מייל ראשון,נתון לדוגמא - להחליף בנתון אמיתי
+8,Example Clearance,דוגמא שחרור מכס,אברהם חדד,בעלים ומנהל,example8@example.co.il,050-0000008,אשדוד,8-12,ייבוא כללי,https://example8.co.il,,pending,,לשלוח מייל ראשון,נתון לדוגמא - להחליף בנתון אמיתי
+9,Sample Broker Inc,סמפל עמילות בע״מ,תמר רוזן,סמנכ״לית תפעול,example9@example.co.il,050-0000009,חיפה,20-30,ייבוא מכונות,https://example9.co.il,,pending,,לשלוח מייל ראשון,נתון לדוגמא - להחליף בנתון אמיתי
+10,Placeholder Customs,פלייסהולדר עמילות מכס,עמית שפירא,בעלים,example10@example.co.il,050-0000010,אשדוד,5-10,ייבוא ריהוט,https://example10.co.il,,pending,,לשלוח מייל ראשון,נתון לדוגמא - להחליף בנתון אמיתי

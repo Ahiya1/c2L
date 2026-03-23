@@ -1,0 +1,54 @@
+# ===========================================================
+# WARNING: This system is DORMANT. It does NOT send emails.
+# To activate, change mode to DRY_RUN (preview only) or LIVE.
+# LIVE mode requires send capability to be added (not built).
+# ===========================================================
+
+mode: DORMANT  # DORMANT | DRY_RUN | LIVE
+
+pipeline_stages:
+  - id: pending
+    label_he: ממתין
+    description: Lead identified, not yet contacted
+  - id: contacted
+    label_he: נוצר קשר
+    description: First email sent
+  - id: follow_up_1
+    label_he: פולואפ 1
+    description: First follow-up sent (4-5 days after initial)
+  - id: follow_up_2
+    label_he: פולואפ 2
+    description: Value-add email sent (7-10 days after follow-up)
+  - id: responded
+    label_he: הגיב
+    description: Broker replied (any reply)
+  - id: call_scheduled
+    label_he: נקבעה שיחה
+    description: Phone or video call scheduled
+  - id: exploring
+    label_he: בתהליך חקירה
+    description: Phase 1 (Exploration) started
+  - id: closed_won
+    label_he: סגירה
+    description: Engagement began
+  - id: closed_lost
+    label_he: לא רלוונטי
+    description: Not interested or not a fit
+  - id: dormant
+    label_he: רדום
+    description: No response after full sequence, revisit later
+
+campaign:
+  max_touches: 3
+  touch_sequence:
+    - cold-outreach
+    - follow-up
+    - value-add
+  days_between_touch_1_and_2: 5
+  days_between_touch_2_and_3: 10
+
+contact_details:
+  sender_name: אחיה בוטמן
+  sender_email: ahiya.butman@gmail.com
+  sender_phone: "058-778-9019"
+  offer_url: https://c2l.dev/customs
