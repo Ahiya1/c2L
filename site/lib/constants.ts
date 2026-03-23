@@ -18,6 +18,19 @@ export const LINKS = {
 } as const;
 
 // Deal structure
+//
+// The site presents 4 customer-facing phases. Internally, the workflow plugin
+// (commands/) uses 6 phases. The mapping is intentional:
+//
+//   Customer Phase 1 (Exploration) = internal explore + plan
+//   Customer Phase 2 (Build)       = internal build
+//   Customer Phase 3 (Validation)  = internal validate + heal
+//   Customer Phase 4 (Delivery)    = internal deliver
+//
+// "plan" is collapsed into Exploration because the customer doesn't need to
+// distinguish discovery from planning. "heal" is collapsed into Validation
+// because fix-iterate cycles are part of the validation deliverable.
+//
 export const PHASES = [
   {
     number: 1,

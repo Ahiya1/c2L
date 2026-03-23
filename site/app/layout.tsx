@@ -27,7 +27,6 @@ export const metadata: Metadata = {
     icon: [
       { url: '/favicon.ico' },
     ],
-    apple: '/apple-touch-icon.png',
   },
   openGraph: {
     type: 'website',

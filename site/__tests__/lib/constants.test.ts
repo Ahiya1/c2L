@@ -61,4 +61,16 @@ describe('constants', () => {
       expect(phase.number).toBe(index + 1);
     });
   });
+
+  it('customer-facing phases match expected names for workflow mapping', () => {
+    // These names must stay aligned with the internal workflow phases:
+    //   Exploration = explore + plan
+    //   Build = build
+    //   Validation = validate + heal
+    //   Delivery = deliver
+    expect(PHASES[0].nameEn).toBe('Exploration');
+    expect(PHASES[1].nameEn).toBe('Build');
+    expect(PHASES[2].nameEn).toBe('Validation');
+    expect(PHASES[3].nameEn).toBe('Delivery');
+  });
 });

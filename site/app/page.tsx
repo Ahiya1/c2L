@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { ExternalLink, ArrowRight, Mail } from 'lucide-react';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
-import { LINKS, EMAIL, PHONE_NUMBER } from '@/lib/constants';
+import { LINKS, EMAIL, PHONE_NUMBER, PHONE_NUMBER_INTL } from '@/lib/constants';
 
 export default function HomePage() {
   return (
@@ -100,7 +100,7 @@ export default function HomePage() {
                   {EMAIL}
                 </a>
                 <a
-                  href={`tel:${PHONE_NUMBER.replace(/-/g, '')}`}
+                  href={`tel:${PHONE_NUMBER_INTL}`}
                   className="text-body text-secondary link-hover"
                 >
                   {PHONE_NUMBER}
