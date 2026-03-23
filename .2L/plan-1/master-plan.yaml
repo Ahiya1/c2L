@@ -1,0 +1,160 @@
+# Master Plan for c2L MVP
+# Created: 2026-03-23T20:45:00Z
+# Plan ID: plan-1
+
+plan_id: plan-1
+created_at: "2026-03-23T20:45:00Z"
+vision_file: .2L/plan-1/vision.md
+
+status: PLANNED
+
+iteration_strategy: multi
+total_iterations: 4
+
+iterations:
+  - iteration_id: iteration-1
+    iteration_number: 1
+    phase_name: "c2L Deal & Site"
+    vision: "Define the customs brokerage offer with specificity and build c2l.dev to present it"
+
+    scope:
+      - "Explore the deal structure: phases, pricing per phase, deliverables, what 'done' looks like"
+      - "Define CTA mechanism (call, WhatsApp, email) based on target market behavior"
+      - "Research customs brokerage workflow specifics (document types, systems like SHAAR/MASLUL)"
+      - "Build Next.js static site at c2l.dev (mirrors selahlabs pattern)"
+      - "Main page (/): c2L identity, link to StatViz as proof of work, link to Ahiya, link to offer"
+      - "Customs offer page (/customs): Hebrew-primary, RTL, names the specific pain, presents structured approach, clear CTA"
+      - "Configure Vercel deployment + c2l.dev DNS"
+      - "Mobile responsive, OG/SEO metadata"
+
+    dependencies:
+      iteration_dependencies: []
+      external_dependencies:
+        - "c2l.dev domain registrar access for DNS configuration"
+        - "Vercel account (active, authenticated)"
+
+    success_criteria:
+      - "Deal structure is defined: phases, pricing, deliverables, exit ramps"
+      - "c2l.dev loads and serves the main page"
+      - "Customs offer page communicates the problem and solution in Hebrew"
+      - "CTA is clear and actionable for an Israeli customs broker"
+      - "Mobile responsive, Hebrew RTL renders correctly"
+
+    estimated_duration_hours: 7
+    risk_level: MEDIUM
+
+    status: NOT_STARTED
+
+  - iteration_id: iteration-2
+    iteration_number: 2
+    phase_name: "c2L-Reach"
+    vision: "Build the outreach engine based on stat-reach and prepare 10 high-quality customs broker leads"
+
+    scope:
+      - "Study stat-reach codebase at ../StatViz (architecture, schema, email flow)"
+      - "Adapt stat-reach for customs broker outreach (new schema, templates, pipeline stages)"
+      - "Contact schema: customs broker contacts (name, company, email, role, location, stage)"
+      - "Research and find 10 real customs broker leads with verified emails"
+      - "Hebrew email templates that name the specific pain and link to c2l.dev/customs"
+      - "Gmail MCP integration for sending through Claude Code"
+      - "Campaign management and tracking"
+      - "CRITICAL: System is built and tested but ABSOLUTELY NOT ACTIVATED — no emails sent to anyone"
+
+    dependencies:
+      iteration_dependencies:
+        - iteration-1
+      external_dependencies:
+        - "Gmail MCP configuration"
+        - "Customs broker public directories for lead research"
+
+    success_criteria:
+      - "10 real customs broker contacts loaded with verified emails"
+      - "System can compose and preview personalized emails via Claude Code"
+      - "Email templates link to c2l.dev/customs offer page"
+      - "Pipeline stages reflect customs broker engagement flow"
+      - "System is DORMANT — zero emails sent, zero external contact"
+
+    estimated_duration_hours: 7
+    risk_level: MEDIUM
+
+    status: NOT_STARTED
+
+  - iteration_id: iteration-3
+    iteration_number: 3
+    phase_name: "c2L Workflow"
+    vision: "Build the cooperative human-AI engagement tooling based on 2L"
+
+    scope:
+      - "Study 2L project at ../../ (plugin system, commands, agents, iteration model)"
+      - "Design c2L engagement phases: explore, plan, build, validate, heal, deliver"
+      - "Build c2L plugin manifest (.claude-plugin/plugin.json)"
+      - "Build phase commands and agents for structured client engagement"
+      - "c2l-explore: structured discovery of client workflow (documents, systems, pain points)"
+      - "c2l-build: cooperative pipeline building (ingest, interpret, structure, validate, output)"
+      - "c2l-validate: test on real client data, measure accuracy"
+      - "c2l-heal: fix issues found in validation"
+      - "Exploration report template and project structure for per-client engagements"
+
+    dependencies:
+      iteration_dependencies:
+        - iteration-1
+      external_dependencies: []
+
+    success_criteria:
+      - "c2L plugin installs and registers commands in Claude Code"
+      - "c2l-explore produces a structured exploration report for a client workflow"
+      - "Phase commands guide Ahiya through each engagement stage cooperatively"
+      - "Per-client project structure supports multiple engagements"
+
+    estimated_duration_hours: 7
+    risk_level: MEDIUM
+
+    status: NOT_STARTED
+
+  - iteration_id: iteration-4
+    iteration_number: 4
+    phase_name: "Integration"
+    vision: "Align site, reach, and workflow into a cohesive system that reflects what was built"
+
+    scope:
+      - "Update c2l.dev based on what iterations 1-3 produced"
+      - "Align offer page with actual engagement workflow from iteration 3"
+      - "Ensure reach email templates match final offer page content"
+      - "Verify all cross-system links work (emails → site → CTA)"
+      - "End-to-end review: outreach email → offer page → engagement workflow"
+      - "Final polish and consistency pass"
+
+    dependencies:
+      iteration_dependencies:
+        - iteration-1
+        - iteration-2
+        - iteration-3
+      external_dependencies: []
+
+    success_criteria:
+      - "Site reflects the actual c2L workflow built in iteration 3"
+      - "Reach emails align with the final offer page"
+      - "End-to-end flow is coherent: email → site → engagement"
+      - "All systems are consistent in messaging and branding"
+
+    estimated_duration_hours: 5
+    risk_level: LOW
+
+    status: NOT_STARTED
+
+metadata:
+  total_estimated_hours: 26
+  overall_risk_level: MEDIUM
+  requires_mvp_approval: true
+
+  critical_constraint: "c2L-Reach must NEVER be activated. Zero external contact until explicit approval."
+
+  reference_projects:
+    stat_reach: "../StatViz"
+    two_l: "../../"
+    selahlabs: "/home/ahiya/Ahiya/2L/Prod/selahlabs"
+
+  exploration_summary:
+    architecture_complexity: "MEDIUM — three independent systems with strong precedent"
+    dependency_risk: "LOW — no shared databases, no complex integrations, only URL references"
+    recommended_iterations: 4

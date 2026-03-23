@@ -1,0 +1,19 @@
+project_name: c2L
+project_path: /home/ahiya/Ahiya/2L/Prod/biz/c2L
+domain: c2l.dev
+
+current_plan: plan-1
+next_iteration_number: 5
+
+plans:
+  plan-1:
+    status: PLANNED
+    created: 2026-03-23
+    vision_file: plan-1/vision.md
+    master_plan_file: plan-1/master-plan.yaml
+    description: "c2L MVP — plugin, site, reach system, first offer (customs brokerage)"
+    iterations:
+      - iteration-1
+      - iteration-2
+      - iteration-3
+      - iteration-4

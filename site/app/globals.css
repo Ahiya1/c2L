@@ -1,0 +1,215 @@
+@import "tailwindcss";
+
+/* ===================================
+   c2L DESIGN SYSTEM
+   =================================== */
+
+/* Design Tokens */
+:root {
+  /* Colors - Professional, trustworthy palette */
+  --c2l-bg-primary: #f8f7f4;
+  --c2l-bg-secondary: #f0eeea;
+  --c2l-text-primary: #1e293b;
+  --c2l-text-secondary: #475569;
+  --c2l-accent: #4a7c7e;
+  --c2l-border: #e2e0db;
+
+  /* Typography */
+  --c2l-font-sans: var(--font-rubik), system-ui, sans-serif;
+
+  /* Motion - Measured transitions */
+  --c2l-transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Spacing scale */
+  --c2l-space-xs: 0.5rem;
+  --c2l-space-sm: 1rem;
+  --c2l-space-md: 1.5rem;
+  --c2l-space-lg: 2rem;
+  --c2l-space-xl: 3rem;
+  --c2l-space-2xl: 4rem;
+  --c2l-space-3xl: 6rem;
+}
+
+/* Base styles */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--c2l-bg-primary);
+  color: var(--c2l-text-primary);
+  font-family: var(--c2l-font-sans);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography scale */
+.text-display {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.text-heading {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+.text-subheading {
+  font-size: clamp(1.125rem, 2vw, 1.25rem);
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.text-body {
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.text-small {
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+/* Color utilities */
+.text-primary { color: var(--c2l-text-primary); }
+.text-secondary { color: var(--c2l-text-secondary); }
+.text-accent { color: var(--c2l-accent); }
+.bg-primary { background-color: var(--c2l-bg-primary); }
+.bg-secondary { background-color: var(--c2l-bg-secondary); }
+
+/* Layout utilities */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--c2l-space-md);
+}
+
+.container-narrow {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 var(--c2l-space-md);
+}
+
+.section {
+  padding: var(--c2l-space-3xl) 0;
+}
+
+.section-sm {
+  padding: var(--c2l-space-2xl) 0;
+}
+
+/* Interactive elements */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+}
+
+/* Button styles */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  transition: all var(--c2l-transition);
+}
+
+.btn-primary {
+  background-color: var(--c2l-text-primary);
+  color: var(--c2l-bg-primary);
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+}
+
+.btn-secondary {
+  border: 1px solid var(--c2l-border);
+  color: var(--c2l-text-primary);
+}
+
+.btn-secondary:hover {
+  background-color: var(--c2l-bg-secondary);
+  border-color: var(--c2l-text-secondary);
+}
+
+.btn-whatsapp {
+  background-color: #25D366;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.btn-whatsapp:hover {
+  background-color: #1DA851;
+}
+
+/* Card style */
+.card {
+  background-color: var(--c2l-bg-secondary);
+  border: 1px solid var(--c2l-border);
+  border-radius: 0.75rem;
+  padding: var(--c2l-space-lg);
+  transition: all var(--c2l-transition);
+}
+
+.card:hover {
+  border-color: var(--c2l-text-secondary);
+}
+
+/* Link hover */
+.link-hover {
+  transition: color var(--c2l-transition);
+}
+
+.link-hover:hover {
+  color: var(--c2l-accent);
+}
+
+/* Header */
+.header-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  background-color: rgba(248, 247, 244, 0.9);
+  border-bottom: 1px solid var(--c2l-border);
+}
+
+.main-with-header {
+  padding-top: 4rem;
+}
+
+/* Focus states for accessibility */
+:focus-visible {
+  outline: 2px solid var(--c2l-accent);
+  outline-offset: 2px;
+}
+
+/* Selection color */
+::selection {
+  background-color: var(--c2l-accent);
+  color: var(--c2l-bg-primary);
+}
