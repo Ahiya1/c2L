@@ -1,0 +1,45 @@
+# c2L Client Configuration
+# Copy this template when initializing a new client engagement.
+# This file is the single source of truth for engagement state.
+# Commands read this file to determine current phase and progress.
+
+client:
+  name: "{CLIENT_NAME}"                    # Company name in English
+  name_he: "{CLIENT_NAME_HEBREW}"          # Company name in Hebrew
+  slug: "{CLIENT_SLUG}"                    # Kebab-case identifier (directory name)
+  contact: "{CONTACT_PERSON}"              # Primary contact person
+  phone: "{PHONE}"                         # Contact phone number
+  email: "{EMAIL}"                         # Contact email address
+  location: "{CITY}"                       # City / port area
+  size: "{EMPLOYEE_COUNT} employees, {CLERK_COUNT} clerks"  # Company size
+  created: "{DATE}"                        # Date this engagement started (YYYY-MM-DD)
+
+engagement:
+  current_phase: explore  # explore | plan | build | validate | heal | deliver | complete
+  phase_started: "{DATE}"                  # When the current phase began (YYYY-MM-DD)
+  phases_completed: []
+  # Example completed phase entry:
+  # - phase: explore
+  #   started: 2026-04-15
+  #   completed: 2026-04-22
+  #   deliverable: exploration/exploration-report.md
+
+volumes:
+  shipments_per_month: null                # Number of shipments processed monthly
+  documents_per_shipment: null             # Average documents per shipment
+  clerks: null                             # Number of data entry clerks
+  estimated_annual_clerk_cost: null        # Total annual clerk cost in NIS
+
+pipeline:
+  document_types: []                       # List of document types to process
+  # Example: [bill-of-lading, commercial-invoice, packing-list]
+  accuracy_targets:
+    field_level: null                      # Target accuracy per field (0.0-1.0)
+    document_level: null                   # Target accuracy per document (0.0-1.0)
+  current_accuracy:
+    field_level: null                      # Measured after validation phase
+    document_level: null                   # Measured after validation phase
+
+notes: |
+  {Free-form notes about this client engagement.
+  Observations, context, anything that does not fit in structured fields.}

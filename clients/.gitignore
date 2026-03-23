@@ -1,0 +1,24 @@
+# Client sample documents - NEVER commit these
+# They contain sensitive business data (shipment values, consignee details, etc.)
+*/samples/
+
+# Binary files that might end up in client directories
+*.pdf
+*.png
+*.jpg
+*.jpeg
+*.tiff
+*.tif
+*.bmp
+*.xlsx
+*.xls
+*.doc
+*.docx
+
+# But DO track these:
+!_templates/
+!_templates/**
+!**/client.yaml
+!**/*.md
+!**/*.yaml
+!**/*.yml

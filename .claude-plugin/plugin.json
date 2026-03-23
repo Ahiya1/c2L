@@ -1,0 +1,15 @@
+{
+  "name": "c2l",
+  "version": "1.0.0",
+  "description": "c2L - Cooperative client engagement tooling for document processing solutions",
+  "author": {
+    "name": "Ahiya"
+  },
+  "keywords": [
+    "engagement",
+    "workflow",
+    "customs",
+    "document-processing",
+    "cooperative"
+  ]
+}
