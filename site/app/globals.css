@@ -346,12 +346,12 @@ button {
 
 .customs-hero {
   padding: 5rem 0 4rem;
+  text-align: center;
 }
 
 .customs-hero-inner {
   max-width: 720px;
   margin: 0 auto;
-  text-align: center;
 }
 
 .customs-headline {
@@ -405,6 +405,7 @@ button {
 .customs-cta {
   background-color: var(--c2l-text-primary);
   padding: 4rem 0;
+  text-align: center;
 }
 
 .customs-cta-alt {
