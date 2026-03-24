@@ -25,9 +25,5 @@ export default function CustomsLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return (
-    <div dir="rtl" lang="he">
-      {children}
-    </div>
-  );
+  return children;
 }

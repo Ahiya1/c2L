@@ -106,7 +106,7 @@ body {
 }
 
 .section-sm {
-  padding: 2.5rem 0;
+  padding: var(--c2l-space-2xl) 0;
 }
 
 /* Interactive elements */
@@ -138,12 +138,12 @@ button {
   background-color: var(--c2l-text-primary);
   color: var(--c2l-bg-primary);
   padding: 0.875rem 2rem;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .btn-primary:hover {
   opacity: 0.9;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
 .btn-secondary {
@@ -173,6 +173,7 @@ button {
   border-radius: 0.75rem;
   padding: var(--c2l-space-lg);
   transition: all var(--c2l-transition);
+  text-align: start;
 }
 
 .card:hover {
@@ -205,16 +206,218 @@ button {
   padding-top: 4rem;
 }
 
-/* Section divider — subtle separator between sections */
-.section-divider {
+/* ===================================
+   HOME PAGE — Heavy, confident feel
+   =================================== */
+
+/* Language toggle */
+.language-toggle-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1rem var(--c2l-space-md) 0;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+[dir="rtl"] .language-toggle-wrapper {
+  justify-content: flex-start;
+}
+
+.language-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.375rem 0.75rem;
+  border-radius: 0.375rem;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--c2l-text-secondary);
+  border: 1px solid var(--c2l-border);
+  transition: all var(--c2l-transition);
+  cursor: pointer;
+  background: transparent;
+  font-family: var(--c2l-font-sans);
+}
+
+.language-toggle:hover {
+  color: var(--c2l-text-primary);
+  border-color: var(--c2l-text-secondary);
+}
+
+/* Hero — takes space, breathes confidence */
+.hero-section {
+  padding: 5rem 0 4rem;
+}
+
+.hero-content {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.hero-headline {
+  font-size: clamp(2.75rem, 5.5vw, 4.25rem);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.025em;
+  color: var(--c2l-text-primary);
+  margin-bottom: 1.5rem;
+}
+
+.hero-sub {
+  font-size: clamp(1.0625rem, 1.5vw, 1.1875rem);
+  line-height: 1.65;
+  color: var(--c2l-text-secondary);
+  margin-bottom: 2.5rem;
+}
+
+.hero-cta {
+  font-size: 1rem;
+  padding: 1rem 2.25rem;
+}
+
+/* Content sections — clean, centered, weighted */
+.content-section {
+  padding: 3.5rem 0;
   border-top: 1px solid var(--c2l-border);
 }
 
-/* Tight container for intimate sections */
-.container-tight {
-  max-width: 640px;
+.section-inner {
+  max-width: 600px;
   margin: 0 auto;
-  padding: 0 var(--c2l-space-md);
+  text-align: center;
+}
+
+.section-heading {
+  font-size: clamp(1.5rem, 3vw, 1.875rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+  color: var(--c2l-text-primary);
+  margin-bottom: 1rem;
+}
+
+.section-body {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--c2l-text-secondary);
+  margin-bottom: 1.25rem;
+}
+
+.section-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  color: var(--c2l-accent);
+  font-size: 1.0625rem;
+  font-weight: 500;
+  transition: color var(--c2l-transition);
+}
+
+.section-link:hover {
+  color: var(--c2l-text-primary);
+}
+
+/* Contact section — closing with weight */
+.contact-section {
+  background-color: var(--c2l-bg-secondary);
+  border-top: none;
+  padding: 4rem 0;
+}
+
+.contact-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 0.25rem;
+}
+
+@media (min-width: 640px) {
+  .contact-actions {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+/* ===================================
+   CUSTOMS PAGE — Confident, flowing
+   =================================== */
+
+.customs-hero {
+  padding: 5rem 0 4rem;
+}
+
+.customs-hero-inner {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.customs-headline {
+  font-size: clamp(2.5rem, 5vw, 3.75rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--c2l-text-primary);
+  margin-bottom: 1.25rem;
+}
+
+.customs-sub {
+  font-size: clamp(1.0625rem, 1.5vw, 1.1875rem);
+  line-height: 1.65;
+  color: var(--c2l-text-secondary);
+}
+
+.customs-section {
+  padding: 3.5rem 0;
+  text-align: center;
+}
+
+.customs-section-border {
+  border-top: 1px solid var(--c2l-border);
+}
+
+.customs-section-heading {
+  font-size: clamp(1.5rem, 3vw, 1.875rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+  color: var(--c2l-text-primary);
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+/* ROI table rows */
+.customs-roi-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.875rem 0;
+  text-align: start;
+}
+
+.customs-roi-border {
+  border-bottom: 1px solid var(--c2l-border);
+}
+
+/* CTA — dark, closing, one shot */
+.customs-cta {
+  background-color: var(--c2l-text-primary);
+  padding: 4rem 0;
+}
+
+.customs-cta-alt {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  color: rgba(248, 247, 244, 0.6);
+  font-size: 0.875rem;
+  transition: color var(--c2l-transition);
+}
+
+.customs-cta-alt:hover {
+  color: rgba(248, 247, 244, 0.9);
 }
 
 /* Focus states for accessibility */

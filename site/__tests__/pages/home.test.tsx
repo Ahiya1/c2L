@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { render, screen } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 import HomePage from '@/app/page';
 
 describe('HomePage', () => {
@@ -7,26 +7,32 @@ describe('HomePage', () => {
     render(<HomePage />);
   });
 
-  it('contains a headline (h1)', () => {
+  it('renders in Hebrew by default', () => {
     render(<HomePage />);
-    const heading = screen.getByRole('heading', { level: 1 });
-    expect(heading).toBeInTheDocument();
+    expect(screen.getByRole('heading', { level: 1 })).toBeInTheDocument();
+    // Hebrew headline should be present
+    const body = document.body.textContent || '';
+    expect(body).toMatch(/[\u0590-\u05FF]/);
   });
 
-  it('contains Hebrew content', () => {
+  it('toggles to English when language button is clicked', () => {
     render(<HomePage />);
-    // Match any Hebrew character (Unicode range U+0590 to U+05FF)
-    const hebrewPattern = /[\u0590-\u05FF]/;
-    const body = document.body.textContent || '';
-    expect(body).toMatch(hebrewPattern);
+    const toggleBtn = screen.getByRole('button', { name: /switch to english/i });
+    fireEvent.click(toggleBtn);
+    expect(
+      screen.getByText('AI Systems That Carry Responsibility')
+    ).toBeInTheDocument();
   });
 
-  it('contains English content', () => {
+  it('toggles back to Hebrew', () => {
     render(<HomePage />);
-    // The page is bilingual -- English text should be present alongside Hebrew
-    const englishPattern = /[A-Za-z]{3,}/;
-    const body = document.body.textContent || '';
-    expect(body).toMatch(englishPattern);
+    const toggleBtn = screen.getByRole('button', { name: /switch to english/i });
+    fireEvent.click(toggleBtn);
+    const toggleBack = screen.getByRole('button', { name: /החלף לעברית/i });
+    fireEvent.click(toggleBack);
+    expect(
+      screen.getByText('מערכות AI שנושאות אחריות')
+    ).toBeInTheDocument();
   });
 
   it('contains a link to the customs offer page', () => {

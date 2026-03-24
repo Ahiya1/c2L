@@ -1,4 +1,4 @@
-import { MessageCircle, Phone, Mail, ExternalLink, ShieldCheck, Clock, Users, AlertTriangle } from 'lucide-react';
+import { MessageCircle, Phone, Mail, ExternalLink, ShieldCheck, Users, AlertTriangle, Clock } from 'lucide-react';
 import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
 import {
@@ -15,15 +15,15 @@ export default function CustomsPage() {
   return (
     <>
       <Header />
-      <main className="min-h-screen main-with-header">
-        {/* ===== Hero Section ===== */}
-        <section className="section">
+      <main className="min-h-screen main-with-header" dir="rtl" lang="he">
+        {/* ===== Hero ===== */}
+        <section className="customs-hero">
           <div className="container">
-            <div className="max-w-3xl mx-auto">
-              <h1 className="text-display text-primary mb-6">
+            <div className="customs-hero-inner">
+              <h1 className="customs-headline">
                 עמילי מכס משלמים חצי מיליון עד מיליון וחצי שקל בשנה על פקידי הקלדה.
               </h1>
-              <p className="text-subheading text-secondary mb-8">
+              <p className="customs-sub">
                 <bdi>c2L</bdi> בונה מערכת שמחליפה את העבודה הזו — לא כלי שעוזר, מערכת שנושאת אחריות.
               </p>
             </div>
@@ -31,7 +31,7 @@ export default function CustomsPage() {
         </section>
 
         {/* ===== Pain Points ===== */}
-        <section className="section-sm bg-secondary">
+        <section className="customs-section customs-section-border">
           <div className="container">
             <div className="grid gap-6 sm:grid-cols-2 max-w-3xl mx-auto">
               <div className="card flex items-start gap-4">
@@ -81,101 +81,80 @@ export default function CustomsPage() {
           </div>
         </section>
 
-        {/* ===== Primary CTA ===== */}
-        <section className="section-sm">
-          <div className="container">
-            <div className="max-w-xl mx-auto text-center">
-              <p className="text-body text-secondary mb-4">
-                מוכנים לשמוע איך זה עובד? שלב ראשון עולה 5,000 &#8362; בלבד.
-              </p>
-              <a
-                href={WHATSAPP_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn btn-whatsapp text-lg px-8 py-4"
-              >
-                <MessageCircle className="w-6 h-6" strokeWidth={2} />
-                דברו איתנו בווטסאפ
-              </a>
-            </div>
-          </div>
-        </section>
-
         {/* ===== Process: How It Works ===== */}
-        <section className="section bg-secondary">
+        <section className="customs-section customs-section-border">
           <div className="container">
-            <h2 className="text-heading text-primary text-center mb-4">
-              איך זה עובד?
-            </h2>
-            <p className="text-body text-secondary text-center mb-8 max-w-2xl mx-auto">
-              ארבעה שלבים, כל אחד עם תוצר ברור. אחרי כל שלב אפשר לעצור — בלי התחייבות קדימה.
-            </p>
-            <div className="grid gap-6 max-w-3xl mx-auto">
-              {PHASES.map((phase) => (
-                <div key={phase.number} className="card">
-                  <div className="flex items-start justify-between mb-3">
-                    <div>
-                      <span className="text-small text-accent font-medium">
-                        שלב {phase.number}
+            <div className="max-w-3xl mx-auto">
+              <h2 className="customs-section-heading">
+                איך זה עובד?
+              </h2>
+              <p className="text-body text-secondary text-center mb-8 max-w-2xl mx-auto">
+                ארבעה שלבים, כל אחד עם תוצר ברור. אחרי כל שלב אפשר לעצור — בלי התחייבות קדימה.
+              </p>
+              <div className="grid gap-5">
+                {PHASES.map((phase) => (
+                  <div key={phase.number} className="card">
+                    <div className="flex items-baseline justify-between mb-2">
+                      <div>
+                        <span className="text-small text-accent font-medium">
+                          שלב {phase.number}
+                        </span>
+                        <h3 className="text-subheading text-primary font-bold">
+                          {phase.nameHe}
+                        </h3>
+                      </div>
+                      <span className="text-body text-secondary font-medium">
+                        {phase.price.toLocaleString('he-IL')} &#8362;
                       </span>
-                      <h3 className="text-subheading text-primary">
-                        {phase.nameHe}
-                      </h3>
                     </div>
-                    <div className="text-left">
-                      <span className="text-heading text-primary">
-                        {phase.price.toLocaleString('he-IL')}
-                      </span>
-                      <span className="text-small text-secondary mr-1">&#8362;</span>
-                    </div>
-                  </div>
-                  <p className="text-body text-secondary mb-2">
-                    {phase.deliverable}
-                  </p>
-                  <p className="text-small text-secondary">
-                    {phase.duration}
-                  </p>
-                  {phase.exitRamp && (
-                    <p className="text-small text-accent mt-3 font-medium">
-                      {phase.exitRamp}
+                    <p className="text-body text-secondary mb-1">
+                      {phase.deliverable}
                     </p>
-                  )}
-                </div>
-              ))}
-            </div>
-            <div className="text-center mt-8">
-              <p className="text-subheading text-primary">
-                סה&quot;כ: {TOTAL_PRICE.toLocaleString('he-IL')} &#8362;
-              </p>
-              <p className="text-small text-secondary mt-1">
-                8-13 שבועות מתחילה ועד מערכת פעילה
-              </p>
+                    <p className="text-small text-secondary">
+                      {phase.duration}
+                    </p>
+                    {phase.exitRamp && (
+                      <p className="text-small text-accent mt-2 font-medium">
+                        {phase.exitRamp}
+                      </p>
+                    )}
+                  </div>
+                ))}
+              </div>
+              <div className="text-center mt-6">
+                <p className="text-subheading text-primary font-bold">
+                  סה&quot;כ: {TOTAL_PRICE.toLocaleString('he-IL')} &#8362;
+                </p>
+                <p className="text-small text-secondary mt-1">
+                  8-13 שבועות מתחילה ועד מערכת פעילה
+                </p>
+              </div>
             </div>
           </div>
         </section>
 
-        {/* ===== ROI Section ===== */}
-        <section className="section-sm">
+        {/* ===== ROI ===== */}
+        <section className="customs-section customs-section-border">
           <div className="container">
             <div className="max-w-2xl mx-auto">
-              <h2 className="text-heading text-primary text-center mb-6">
+              <h2 className="customs-section-heading">
                 החשבון פשוט
               </h2>
               <div className="card">
-                <div className="flex flex-col gap-4">
-                  <div className="flex items-center justify-between py-3" style={{ borderBottom: '1px solid var(--c2l-border)' }}>
+                <div className="flex flex-col">
+                  <div className="customs-roi-row customs-roi-border">
                     <span className="text-body text-secondary">עלות שנתית של פקידים</span>
                     <span className="text-subheading text-primary font-medium">500,000 - 1,400,000 &#8362;</span>
                   </div>
-                  <div className="flex items-center justify-between py-3" style={{ borderBottom: '1px solid var(--c2l-border)' }}>
+                  <div className="customs-roi-row customs-roi-border">
                     <span className="text-body text-secondary">עלות המערכת (חד-פעמי)</span>
                     <span className="text-subheading text-primary font-medium">{TOTAL_PRICE.toLocaleString('he-IL')} &#8362;</span>
                   </div>
-                  <div className="flex items-center justify-between py-3" style={{ borderBottom: '1px solid var(--c2l-border)' }}>
+                  <div className="customs-roi-row customs-roi-border">
                     <span className="text-body text-secondary">המערכת מחזירה את עצמה תוך</span>
                     <span className="text-subheading text-accent font-medium">2-4 חודשים</span>
                   </div>
-                  <div className="flex items-center justify-between py-3">
+                  <div className="customs-roi-row">
                     <span className="text-body text-secondary">חיסכון בשנה הראשונה</span>
                     <span className="text-subheading text-accent font-medium">350,000 - 1,250,000 &#8362;</span>
                   </div>
@@ -188,11 +167,11 @@ export default function CustomsPage() {
           </div>
         </section>
 
-        {/* ===== Trust Section ===== */}
-        <section className="section-sm bg-secondary">
+        {/* ===== Trust ===== */}
+        <section className="customs-section customs-section-border">
           <div className="container">
             <div className="max-w-3xl mx-auto">
-              <h2 className="text-heading text-primary text-center mb-6">
+              <h2 className="customs-section-heading">
                 למה לסמוך עלינו?
               </h2>
               <div className="grid gap-6 sm:grid-cols-3">
@@ -204,34 +183,30 @@ export default function CustomsPage() {
                   </p>
                 </div>
                 <div className="text-center">
-                  <div className="mb-3">
-                    <a
-                      href={LINKS.statviz}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1 text-accent link-hover"
-                    >
-                      <span className="text-subheading font-medium">StatViz</span>
-                      <ExternalLink className="w-4 h-4" strokeWidth={1.5} />
-                    </a>
-                  </div>
+                  <a
+                    href={LINKS.statviz}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 text-accent link-hover mb-3"
+                  >
+                    <span className="text-subheading font-medium">StatViz</span>
+                    <ExternalLink className="w-4 h-4" strokeWidth={1.5} />
+                  </a>
                   <h3 className="text-subheading text-primary mb-2">ניסיון מוכח</h3>
                   <p className="text-small text-secondary">
                     כבר בנינו פלטפורמת <bdi>B2B</bdi> עובדת עם תמיכה בעברית. לא מדובר בתיאוריה.
                   </p>
                 </div>
                 <div className="text-center">
-                  <div className="mb-3">
-                    <a
-                      href={LINKS.ahiya}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1 text-accent link-hover"
-                    >
-                      <span className="text-subheading font-medium">אחיה בוטמן</span>
-                      <ExternalLink className="w-4 h-4" strokeWidth={1.5} />
-                    </a>
-                  </div>
+                  <a
+                    href={LINKS.ahiya}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 text-accent link-hover mb-3"
+                  >
+                    <span className="text-subheading font-medium">אחיה בוטמן</span>
+                    <ExternalLink className="w-4 h-4" strokeWidth={1.5} />
+                  </a>
                   <h3 className="text-subheading text-primary mb-2">בן אדם, לא חברה</h3>
                   <p className="text-small text-secondary">
                     אחיה בונה את המערכת יחד איתך. תקשורת ישירה, לא דרך מחלקת מכירות.
@@ -242,46 +217,43 @@ export default function CustomsPage() {
           </div>
         </section>
 
-        {/* ===== Final CTA ===== */}
-        <section className="section-sm">
+        {/* ===== CTA ===== */}
+        <section className="customs-cta">
           <div className="container">
             <div className="max-w-xl mx-auto text-center">
-              <h2 className="text-heading text-primary mb-4">
+              <h2 className="section-heading mb-4" style={{ color: 'var(--c2l-bg-primary)' }}>
                 בואו נדבר
               </h2>
-              <p className="text-body text-secondary mb-6">
+              <p className="text-body mb-8" style={{ color: 'rgba(248, 247, 244, 0.75)' }}>
                 שלב ראשון — חקירה — עולה 5,000 &#8362;. אתם מקבלים דוח מפורט שלכם, ויכולים להחליט אם להמשיך.
               </p>
-
-              <div className="flex flex-col gap-4 items-center">
-                {/* WhatsApp - Primary */}
+              <div className="flex flex-col items-center gap-4">
                 <a
                   href={WHATSAPP_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn btn-whatsapp text-lg px-8 py-4 w-full sm:w-auto"
+                  className="btn btn-whatsapp text-lg px-8 py-4"
                 >
                   <MessageCircle className="w-6 h-6" strokeWidth={2} />
                   דברו איתנו בווטסאפ
                 </a>
-
-                {/* Phone - Secondary */}
-                <a
-                  href={`tel:${PHONE_NUMBER_INTL}`}
-                  className="btn btn-secondary w-full sm:w-auto"
-                >
-                  <Phone className="w-5 h-5" strokeWidth={1.5} />
-                  {PHONE_NUMBER}
-                </a>
-
-                {/* Email - Tertiary */}
-                <a
-                  href={`mailto:${EMAIL}`}
-                  className="btn btn-secondary w-full sm:w-auto"
-                >
-                  <Mail className="w-5 h-5" strokeWidth={1.5} />
-                  {EMAIL}
-                </a>
+                <div className="flex items-center gap-4">
+                  <a
+                    href={`tel:${PHONE_NUMBER_INTL}`}
+                    className="customs-cta-alt"
+                  >
+                    <Phone className="w-4 h-4" strokeWidth={1.5} />
+                    {PHONE_NUMBER}
+                  </a>
+                  <span style={{ color: 'rgba(248, 247, 244, 0.3)' }}>|</span>
+                  <a
+                    href={`mailto:${EMAIL}`}
+                    className="customs-cta-alt"
+                  >
+                    <Mail className="w-4 h-4" strokeWidth={1.5} />
+                    {EMAIL}
+                  </a>
+                </div>
               </div>
             </div>
           </div>

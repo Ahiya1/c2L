@@ -14,13 +14,13 @@ describe('CustomsPage', () => {
     ).toBeInTheDocument();
   });
 
-  it('contains WhatsApp CTA links', () => {
+  it('contains WhatsApp CTA link', () => {
     render(<CustomsPage />);
     const links = screen.getAllByRole('link');
     const whatsappLinks = links.filter((link) =>
       link.getAttribute('href')?.includes('wa.me')
     );
-    expect(whatsappLinks.length).toBeGreaterThanOrEqual(2);
+    expect(whatsappLinks.length).toBeGreaterThanOrEqual(1);
   });
 
   it('contains all 4 phase names in Hebrew', () => {
@@ -33,11 +33,11 @@ describe('CustomsPage', () => {
 
   it('contains pricing numbers for each phase', () => {
     render(<CustomsPage />);
-    // Phase prices formatted with locale
-    expect(screen.getByText('5,000')).toBeInTheDocument();
-    expect(screen.getByText('80,000')).toBeInTheDocument();
-    expect(screen.getByText('35,000')).toBeInTheDocument();
-    expect(screen.getByText('30,000')).toBeInTheDocument();
+    // Phase prices appear in cards (may also appear elsewhere on page)
+    expect(screen.getAllByText(/5,000/).length).toBeGreaterThanOrEqual(1);
+    expect(screen.getAllByText(/80,000/).length).toBeGreaterThanOrEqual(1);
+    expect(screen.getAllByText(/35,000/).length).toBeGreaterThanOrEqual(1);
+    expect(screen.getAllByText(/30,000/).length).toBeGreaterThanOrEqual(1);
   });
 
   it('contains the total price', () => {
