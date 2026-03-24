@@ -106,7 +106,7 @@ body {
 }
 
 .section-sm {
-  padding: var(--c2l-space-2xl) 0;
+  padding: 2.5rem 0;
 }
 
 /* Interactive elements */
@@ -137,10 +137,13 @@ button {
 .btn-primary {
   background-color: var(--c2l-text-primary);
   color: var(--c2l-bg-primary);
+  padding: 0.875rem 2rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 
 .btn-primary:hover {
   opacity: 0.9;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
 }
 
 .btn-secondary {
@@ -200,6 +203,18 @@ button {
 
 .main-with-header {
   padding-top: 4rem;
+}
+
+/* Section divider — subtle separator between sections */
+.section-divider {
+  border-top: 1px solid var(--c2l-border);
+}
+
+/* Tight container for intimate sections */
+.container-tight {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 0 var(--c2l-space-md);
 }
 
 /* Focus states for accessibility */

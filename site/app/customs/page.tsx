@@ -155,10 +155,10 @@ export default function CustomsPage() {
         </section>
 
         {/* ===== ROI Section ===== */}
-        <section className="section">
+        <section className="section-sm">
           <div className="container">
             <div className="max-w-2xl mx-auto">
-              <h2 className="text-heading text-primary text-center mb-8">
+              <h2 className="text-heading text-primary text-center mb-6">
                 החשבון פשוט
               </h2>
               <div className="card">
@@ -192,7 +192,7 @@ export default function CustomsPage() {
         <section className="section-sm bg-secondary">
           <div className="container">
             <div className="max-w-3xl mx-auto">
-              <h2 className="text-heading text-primary text-center mb-8">
+              <h2 className="text-heading text-primary text-center mb-6">
                 למה לסמוך עלינו?
               </h2>
               <div className="grid gap-6 sm:grid-cols-3">
@@ -243,13 +243,13 @@ export default function CustomsPage() {
         </section>
 
         {/* ===== Final CTA ===== */}
-        <section className="section">
+        <section className="section-sm">
           <div className="container">
             <div className="max-w-xl mx-auto text-center">
               <h2 className="text-heading text-primary mb-4">
                 בואו נדבר
               </h2>
-              <p className="text-body text-secondary mb-8">
+              <p className="text-body text-secondary mb-6">
                 שלב ראשון — חקירה — עולה 5,000 &#8362;. אתם מקבלים דוח מפורט שלכם, ויכולים להחליט אם להמשיך.
               </p>
 

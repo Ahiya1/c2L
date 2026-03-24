@@ -7,9 +7,26 @@ describe('HomePage', () => {
     render(<HomePage />);
   });
 
-  it('contains the main headline', () => {
+  it('contains a headline (h1)', () => {
     render(<HomePage />);
-    expect(screen.getByText('AI Systems That Carry Responsibility')).toBeInTheDocument();
+    const heading = screen.getByRole('heading', { level: 1 });
+    expect(heading).toBeInTheDocument();
+  });
+
+  it('contains Hebrew content', () => {
+    render(<HomePage />);
+    // Match any Hebrew character (Unicode range U+0590 to U+05FF)
+    const hebrewPattern = /[\u0590-\u05FF]/;
+    const body = document.body.textContent || '';
+    expect(body).toMatch(hebrewPattern);
+  });
+
+  it('contains English content', () => {
+    render(<HomePage />);
+    // The page is bilingual -- English text should be present alongside Hebrew
+    const englishPattern = /[A-Za-z]{3,}/;
+    const body = document.body.textContent || '';
+    expect(body).toMatch(englishPattern);
   });
 
   it('contains a link to the customs offer page', () => {

@@ -1,0 +1,52 @@
+plan_id: plan-2
+created_at: "2026-03-24T10:00:00Z"
+status: PLANNED
+mode: production
+total_iterations: 1
+
+strategy: |
+  Single iteration touching 4-5 files. All three vision goals (layout, bilingual, polish)
+  are tightly coupled — they affect the same components and CSS. The codebase is tiny
+  (~500 lines of source). Splitting would mean touching the same files twice.
+
+  Key insight: The home page is 100% English, customs is 100% Hebrew.
+  The bilingual infrastructure already exists (Rubik font loads both subsets,
+  constants.ts has nameHe/nameEn). This is additive work, not restructuring.
+
+  Primary risk: home page tests check exact English text — tests need updating
+  for bilingual content. Customs page tests should pass unchanged.
+
+iterations:
+  - iteration_id: 1
+    global_iteration: 5
+    name: "Site Polish — Layout, Bilingual, Flow"
+    vision: "Transform c2l.dev from stacked blocks to a cohesive, bilingual, professional presence"
+    scope: |
+      HOME PAGE (page.tsx):
+      - Bilingual hero: Hebrew headline large/prominent, English echo below smaller/lighter
+      - Break visual monotony: vary section widths, not everything max-w-3xl text-center
+      - Strengthen CTA visual weight (padding, prominence)
+      - Make sections flow into each other instead of hard zebra-stripe boundaries
+
+      CSS/GLOBALS (globals.css):
+      - Smooth section transitions (gradients or subtle borders instead of hard bg swaps)
+      - Tighten padding-to-content ratio on smaller sections (reduce floatiness)
+      - Use container-narrow for width variation
+      - Consistent spacing rhythm
+
+      CUSTOMS PAGE (customs/page.tsx):
+      - Light alignment polish only — do not change content or structure
+      - Improve section flow consistency with home page patterns
+
+      TESTS:
+      - Update home.test.tsx for bilingual content
+      - Ensure customs tests pass unchanged
+      - All 42 existing tests must pass
+
+      CONSTRAINTS:
+      - Keep design system (colors, Rubik font, brand)
+      - Keep architecture (Next.js, static export)
+      - No content changes to contact info, pricing, phase model
+      - Hebrew-first, English alongside (not toggle)
+    status: PENDING
+    dependencies: []

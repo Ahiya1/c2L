@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { ExternalLink, ArrowRight, Mail } from 'lucide-react';
+import { ExternalLink, ArrowRight, Mail, Phone } from 'lucide-react';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
 import { LINKS, EMAIL, PHONE_NUMBER, PHONE_NUMBER_INTL } from '@/lib/constants';
@@ -13,16 +13,20 @@ export default function HomePage() {
         <section className="section">
           <div className="container">
             <div className="max-w-4xl mx-auto text-center">
-              <h1 className="text-display text-primary mb-6">
-                AI Systems That Carry Responsibility
-              </h1>
+              <div dir="rtl" lang="he" className="mb-4">
+                <h1 className="text-display text-primary">
+                  מערכות AI שנושאות אחריות
+                </h1>
+              </div>
               <p className="text-subheading text-secondary mb-8 max-w-2xl mx-auto">
-                c2L builds systems that replace manual workflows — not tools that
-                assist, systems that take ownership of the work.
+                AI Systems That Carry Responsibility — <bdi>c2L</bdi> builds
+                systems that replace manual workflows. Not tools that assist,
+                systems that take ownership.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Link href="/customs" className="btn btn-primary">
-                  See our customs brokerage offer
+                  <span dir="rtl" lang="he">ראו את ההצעה שלנו</span>
+                  <span className="text-small opacity-75">Our Offer</span>
                   <ArrowRight className="w-4 h-4" strokeWidth={2} />
                 </Link>
               </div>
@@ -31,12 +35,17 @@ export default function HomePage() {
         </section>
 
         {/* Proof of Work Section */}
-        <section className="section-sm bg-secondary">
+        <section className="section-sm section-divider">
           <div className="container">
-            <div className="max-w-3xl mx-auto text-center">
-              <h2 className="text-heading text-primary mb-4">
+            <div className="container-tight text-center">
+              <div dir="rtl" lang="he" className="mb-1">
+                <h2 className="text-heading text-primary">
+                  הוכחת עבודה
+                </h2>
+              </div>
+              <p className="text-small text-secondary mb-4">
                 Proof of Work
-              </h2>
+              </p>
               <p className="text-body text-secondary mb-6">
                 StatViz is a B2B data platform we built and shipped — complete
                 with Hebrew support, secure document handling, and
@@ -56,16 +65,21 @@ export default function HomePage() {
         </section>
 
         {/* Founder Section */}
-        <section className="section-sm">
+        <section className="section-sm section-divider">
           <div className="container">
-            <div className="max-w-3xl mx-auto text-center">
-              <h2 className="text-heading text-primary mb-4">
+            <div className="container-tight">
+              <div dir="rtl" lang="he" className="mb-1">
+                <h2 className="text-heading text-primary">
+                  נבנה על ידי אחיה
+                </h2>
+              </div>
+              <p className="text-small text-secondary mb-4">
                 Built by Ahiya
-              </h2>
+              </p>
               <p className="text-body text-secondary mb-6">
-                c2L is a one-person operation. Ahiya designs, builds, and
-                delivers every system personally. No sales team, no layers —
-                the person you talk to is the person who builds.
+                <bdi>c2L</bdi> is a one-person operation. Ahiya designs, builds,
+                and delivers every system personally. No sales team, no layers
+                — the person you talk to is the person who builds.
               </p>
               <a
                 href={LINKS.ahiya}
@@ -81,28 +95,34 @@ export default function HomePage() {
         </section>
 
         {/* Contact Section */}
-        <section className="section-sm bg-secondary">
+        <section className="section-sm section-divider">
           <div className="container">
-            <div className="max-w-3xl mx-auto text-center">
-              <h2 className="text-heading text-primary mb-4">
-                Get in Touch
-              </h2>
-              <p className="text-body text-secondary mb-6">
-                Interested in what c2L can build for your business? Reach out
-                directly.
+            <div className="max-w-xl mx-auto text-center">
+              <div dir="rtl" lang="he" className="mb-1">
+                <h2 className="text-heading text-primary">
+                  בואו נדבר
+                </h2>
+              </div>
+              <p className="text-small text-secondary mb-4">
+                Let&apos;s Talk
+              </p>
+              <p className="text-body text-secondary mb-8">
+                Interested in what <bdi>c2L</bdi> can build for your business?
+                Reach out directly.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <a
                   href={`mailto:${EMAIL}`}
-                  className="btn btn-secondary"
+                  className="btn btn-primary"
                 >
                   <Mail className="w-4 h-4" strokeWidth={1.5} />
                   {EMAIL}
                 </a>
                 <a
                   href={`tel:${PHONE_NUMBER_INTL}`}
-                  className="text-body text-secondary link-hover"
+                  className="btn btn-secondary"
                 >
+                  <Phone className="w-4 h-4" strokeWidth={1.5} />
                   {PHONE_NUMBER}
                 </a>
               </div>

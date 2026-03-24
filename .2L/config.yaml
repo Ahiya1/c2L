@@ -2,12 +2,12 @@ project_name: c2L
 project_path: /home/ahiya/Ahiya/2L/Prod/biz/c2L
 domain: c2l.dev
 
-current_plan: plan-1
-next_iteration_number: 5
+current_plan: plan-2
+next_iteration_number: 6
 
 plans:
   plan-1:
-    status: PLANNED
+    status: COMPLETE
     created: 2026-03-23
     vision_file: plan-1/vision.md
     master_plan_file: plan-1/master-plan.yaml
@@ -17,3 +17,13 @@ plans:
       - iteration-2
       - iteration-3
       - iteration-4
+
+  plan-2:
+    status: PLANNED
+    created: 2026-03-24
+    vision_file: plan-2/vision.md
+    master_plan_file: plan-2/master-plan.yaml
+    mode: production
+    description: "Site Polish — Make c2l.dev feel professional and trustworthy"
+    iterations:
+      - iteration-5
